@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
+import { TaskFormComponent } from './components/task-form/task-form.component';
+import { TaskListComponent } from './components/task-list/task-list.component';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [TaskFormComponent, TaskListComponent] // ✅ IMPORTANTE!
 })
 export class AppComponent {
-  title = 'angular-temp';
+  @ViewChild(TaskListComponent) taskListComponent!: TaskListComponent;
+
+  loadTasks() {
+    this.taskListComponent?.loadTasks();
+  }
 }
