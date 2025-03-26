@@ -7,7 +7,7 @@ import { TaskListComponent } from './components/task-list/task-list.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [TaskFormComponent, TaskListComponent] // ✅ IMPORTANTE!
+  imports: [TaskFormComponent, TaskListComponent] 
 })
 export class AppComponent {
   @ViewChild(TaskListComponent) taskListComponent!: TaskListComponent;

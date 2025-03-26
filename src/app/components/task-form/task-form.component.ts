@@ -28,7 +28,7 @@ export class TaskFormComponent {
       const title = this.taskForm.value.title;
       this.taskService.addTask(title).subscribe(() => {
         this.taskForm.reset();
-        this.taskAdded.emit(); // notifica il parent di ricaricare la lista
+        this.taskAdded.emit();
       });
     }
   }
